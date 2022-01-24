@@ -88,6 +88,7 @@ def main():
         slack_attachment['fields'].append({
             "title": "Tests that are faling",
             "value": f"{xunit_report.name}",
+            "short": True
         })
 
         # If success, only send if configured.

@@ -85,6 +85,11 @@ def main():
             "value": str(file)
         })
 
+        slack_attachment['fields'].append({
+            "title": "Tests that are faling",
+            "value": f"{xunit_report.name}",
+        })
+
         # If success, only send if configured.
         if not file_contains_failures:
             if not only_notify_on_issues:
